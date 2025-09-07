@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Deployment
+metadata:
+   name: turtle-deployment
+   namespace: default
+spec:
+   replica: 3
+   selector:
+      matchLabel:
+         app: turtle
+      template:
+         metadata:
+            labesl:
+               app: turtle
+        spec:
+           containers:
+              - name: nginx
+                image: nginx:stable
